@@ -1,42 +1,107 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  font-family: var(--font-family);
+  background-color: var(--background);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.section__padding {
+  padding: 2rem 4rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.users__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.card {
-  padding: 2em;
+.users__container-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+  margin-bottom: 4rem;
 }
 
-.read-the-docs {
-  color: #888;
+.users__container-header h1 {
+  color: #fff;
+  font-size: 24px;
+  letter-spacing: 2px;
+}
+
+.users__container-header p {
+  color: #fff;
+  font-size: 16px;
+}
+
+.users__container-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  width: 100%;
+}
+
+.users__container-body h2 {
+  color: var(--foreground);
+  font-size: 14px;  
+}
+
+.users__container-body_users-info {
+  margin-top: 3rem;
+  border-radius: 10px;
+  width: 60%;
+}
+
+.users__container-body_users-info ul {
+  width: 100%;
+  list-style-type: none;
+
+  background-color: var(--color-secondary);
+  border-radius: 5px;
+
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+
+  padding: 1rem 0;
+}
+
+.users__container-body_users-info ul li {
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 1rem 3rem;
+}
+
+.users__container-body_users-info ul li:hover {
+  background-color: var(--color-primary);
+}
+
+.users__container-body_users-info ul li h4 {
+  font-size: 16px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.users__container-body_users-info ul li p {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--foreground);
+
+  padding-left: 1rem;
+  transition: color 0.3s;
+}
+
+.users__container-body_users-info ul li:hover p {
+  color: #fff;
 }
