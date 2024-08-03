@@ -1,2 +1,2 @@
 # Next Tutorial
-NextJs allows frontend developers to render some of their code in server or client side.
+This should have been for NextJs but i am using it to write a test code fetching the placeholder API using tanstack query.
