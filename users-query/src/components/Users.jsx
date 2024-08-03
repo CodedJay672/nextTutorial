@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 import {
@@ -6,20 +6,42 @@ import {
 } from '@tanstack/react-query';
 
 import { getUsers } from '../api/getUsers';
+import Modal from '../container/Modal';
 
 const Users = () => {
+  const [user, setUser] = useState(null);
+  const [ showModal, setShowModal ] = useState(false);
+
   //useQuery hook to fetch data
   const {data, isPending, error} = useQuery({
     queryKey: ["getUsers"],
     queryFn: getUsers,
   })
 
+  const handleCloseModal = () => {
+    setShowModal(false);
+  }
+
+  const handleClick = () => {
+    setShowModal(true);
+  }
+
+
   if (isPending) return <div className='users__container-loading'>Loading...</div>
 
   if (error) return <div className='users__container-error'>{error.message}</div>
 
   return (
+    
     <div className='users__container section__padding'>
+      {/* Modal */}
+      {showModal && (
+        <Modal
+          user={user}
+          closeModal={handleCloseModal}
+        />
+      )}
+
       <div className='users__container-header'>
         <h1>Users Query</h1>
         <p>Query Like a Pro</p>
@@ -29,7 +51,7 @@ const Users = () => {
         <div className='users__container-body_users-info'>
           <ul>
             {data.map((user) => (
-              <li key={user.id}>
+              <li key={user.id} onClick={handleClick}>
                 <div>
                   <h4>{user.name}</h4>
                   <p>{user.email}</p>

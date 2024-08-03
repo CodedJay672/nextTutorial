@@ -17,6 +17,13 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  position: relative;
+}
+
+.users__container .users__container_modal-details {
+  background-color: var(--color-secondary);
+  position: absolute;
 }
 
 .users__container-header {
@@ -66,7 +73,7 @@ body {
   background-color: var(--color-secondary);
   border-radius: 5px;
 
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 0 14px rgba(0, 0, 0, 0.5);
 
   padding: 1rem 0;
 }

@@ -6,3 +6,8 @@ export const getUsers = () => {
   return getusers;
 }
 
+export const getUserById = (id) => {
+  const getuser = fetch(`https://jsonplaceholder.typicode.com/users/${id}`).then(res => res.json());
+
+  return getuser;
+}
