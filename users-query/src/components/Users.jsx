@@ -22,8 +22,9 @@ const Users = () => {
     setShowModal(false);
   }
 
-  const handleClick = () => {
+  const handleClick = (user) => {
     setShowModal(true);
+    setUser(user);
   }
 
 
@@ -51,7 +52,7 @@ const Users = () => {
         <div className='users__container-body_users-info'>
           <ul>
             {data.map((user) => (
-              <li key={user.id} onClick={handleClick}>
+              <li key={user.id} onClick={() => handleClick(user)}>
                 <div>
                   <h4>{user.name}</h4>
                   <p>{user.email}</p>

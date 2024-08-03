@@ -5,11 +5,9 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
-  border: 1px solid white;
   border-radius: 5px;
 
-  padding: 1rem 3rem;
+  color: #fff;
 }
 
 .users__container_modal-details_header {
@@ -38,4 +36,8 @@
 .users__container_modal-details_header svg {
   color: #fff;
   font-size: 24px;
+}
+
+.users__container_modal-details_body {
+  width: 100%;
 }

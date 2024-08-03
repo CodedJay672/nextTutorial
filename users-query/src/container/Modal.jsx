@@ -4,10 +4,6 @@ import './Modal.css';
 import { MdClose } from "react-icons/md";
 
 const Modal = ({ user, closeModal }) => {
-  useEffect(() => {
-    console.log(user);
-  }, [])
-
   return (
     <div className={`users__container_modal-details`}>
       <div className='users__container_modal-details_header'>
